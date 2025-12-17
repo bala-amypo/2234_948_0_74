@@ -1,10 +1,11 @@
 package com.example.demo.exception.*;
 
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.MethodArgumentNotValidException
 
 
 @RestControllerAdvice
-public calss globalExceptionHandler {
+public class globalExceptionHandler {
 
-    @ExceptionHandler ()
+    @ExceptionHandler (MethodArgumentNotValidException.class)
 }
