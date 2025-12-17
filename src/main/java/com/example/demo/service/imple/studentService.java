@@ -1,3 +1,7 @@
 package com.example.demo.service;
 
-i
+interface studentService {
+
+@Service
+    public class studentServiceImpl
+}
