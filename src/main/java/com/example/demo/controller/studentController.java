@@ -19,9 +19,16 @@ public class studentController {
     public List<studentEntity> getAll(){
         return service.getAll();
     }
-    @PostMApping("/add")
+    @PostMapping("/add")
     public studentEntity addStudent(@Valid @RequestBody studentEntity student) {
         return service.addStudent(student);
     }
+    @GetMapping("/get/{id}")
+    public studentEntity getStudentById(@PathVariable Long Id){
+    return service.getById(id);
+    }
+    @PutMapping("/update/{id}")
+    public String updateStatus(
+    @Pathvariable
 
 }
