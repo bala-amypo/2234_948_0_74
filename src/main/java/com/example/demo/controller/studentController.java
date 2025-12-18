@@ -1,5 +1,8 @@
 package com.example.demo.controller;
 
+
+import com.example.demo.entity.studentEntity;
+
 import org.springframework.web.bind.annotation.*;
 import jakarta.validation.Valid;
 
@@ -23,12 +26,22 @@ public class studentController {
     public studentEntity addStudent(@Valid @RequestBody studentEntity student) {
         return service.addStudent(student);
     }
+
     @GetMapping("/get/{id}")
     public studentEntity getStudentById(@PathVariable Long Id){
-    return service.getById(id);
+        return service.getById(id);
     }
+
     @PutMapping("/update/{id}")
     public String updateStatus(
-    @Pathvariable
+    @Pathvariable Long id,
+    @RequestBody studentEntity student){
+        return sevice.updateStudent(id, student);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public String deleteStudent(@PathVariable Long id){
+    return service.deleteStudent(id);
+    }
 
 }
